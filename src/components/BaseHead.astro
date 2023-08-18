@@ -1,0 +1,67 @@
+---
+import "../styles/global.css";
+type Props = {
+  title: string;
+  description?: string;
+  ogImage?: string;
+  publishedAt?: string;
+};
+
+const { title, description, ogImage, publishedAt } = Astro.props;
+
+const author = "Trent";
+const ogLocale = "en_AU";
+
+const siteTitle = `${title} • thwd.dev`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const socialImageURL = new URL(
+  ogImage ? ogImage : "/default-social.png",
+  Astro.url
+).href;
+---
+
+<meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>{siteTitle}</title>
+
+<!-- Icons / Favicon -->
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" href="/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<meta name="title" content={siteTitle} />
+<meta name="description" content={description} />
+<meta name="author" content={author} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={publishedAt ? "article" : "website"} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:site_name" content={title} />
+<meta property="og:locale" content={ogLocale} />
+<meta property="og:image" content={socialImageURL} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+{
+  publishedAt && (
+    <>
+      <meta property="article:author" content={author} />
+      <meta property="article:published_time" content={publishedAt} />
+    </>
+  )
+}
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={socialImageURL} />
