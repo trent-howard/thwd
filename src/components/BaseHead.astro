@@ -11,8 +11,9 @@ const { title, description, ogImage, publishedAt } = Astro.props;
 
 const author = "Trent";
 const ogLocale = "en_AU";
+const siteName = "thwd.dev";
 
-const siteTitle = `${title} • thwd.dev`;
+const siteTitle = `${title} • ${siteName}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL(
   ogImage ? ogImage : "/default-social.jpg",
@@ -46,7 +47,7 @@ const socialImageURL = new URL(
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonicalURL} />
-<meta property="og:site_name" content={title} />
+<meta property="og:site_name" content={siteName} />
 <meta property="og:locale" content={ogLocale} />
 <meta property="og:image" content={socialImageURL} />
 <meta property="og:image:width" content="1200" />
