@@ -27,5 +27,9 @@ export default defineConfig({
       ],
       [addClasses, { [linkableMdHeadings.join(",")]: "md-title" }],
     ],
+    shikiConfig: {
+      wrap: true,
+      theme: "poimandres",
+    },
   },
 });
