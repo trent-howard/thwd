@@ -12,3 +12,10 @@
 
 @tailwind components;
 @tailwind utilities;
+
+.md-title {
+  @apply relative;
+}
+.md-title a {
+  @apply block no-underline before:absolute before:right-full before:block before:pr-1 before:opacity-100 before:content-["#"] before:hover:text-blue-700;
+}
