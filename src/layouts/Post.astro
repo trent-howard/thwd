@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 
 import BaseLayout from "@/layouts/Base.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
+import PostOutline from "@/components/post/PostOutline.astro";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -13,6 +14,7 @@ const { post } = Astro.props;
 const {
   data: { title, description, ogImage, publishedAt, updatedAt },
 } = post;
+const { headings } = await post.render();
 
 const dateFormat: Intl.DateTimeFormatOptions = {
   month: "long",
@@ -28,6 +30,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
   }}
 >
   <div class="gap-x-10 lg:flex lg:items-start">
+    <PostOutline headings={headings} />
     <article class="flex-grow break-words" data-pagefind-body>
       {
         !!ogImage && (

@@ -42,3 +42,7 @@ export type Meta = {
   ogImageSrc?: string;
   publishedAt?: string;
 };
+
+// markdown headings that will be converted to links
+// and added to the post outline
+export const linkableMdHeadings = ["h1", "h2", "h3"];

@@ -2,9 +2,8 @@ import { defineConfig, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
+import { linkableMdHeadings } from "@/constants";
 import addClasses from "./rehype-add-classes.mjs";
-
-const linkableMdHeadings = ["h1", "h2", "h3"];
 
 // https://astro.build/config
 export default defineConfig({
