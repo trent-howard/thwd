@@ -2,8 +2,9 @@ import { defineConfig, sharpImageService } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
-import { linkableMdHeadings } from "@/constants";
 import addClasses from "./rehype-add-classes.mjs";
+// import fails on build if we use the @ path shortcut
+import { linkableMdHeadings } from "./src/constants";
 
 // https://astro.build/config
 export default defineConfig({
