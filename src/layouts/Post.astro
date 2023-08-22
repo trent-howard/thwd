@@ -1,0 +1,68 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+
+import BaseLayout from "./Base.astro";
+import FormattedDate from "../components/FormattedDate.astro";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const {
+  data: { title, description, ogImage, publishedAt, updatedAt },
+} = post;
+
+const dateFormat: Intl.DateTimeFormatOptions = {
+  month: "long",
+};
+---
+
+<BaseLayout
+  meta={{
+    title,
+    description,
+    publishedAt: publishedAt.toISOString(),
+    ogImageSrc: ogImage?.src.src,
+  }}
+>
+  <div class="gap-x-10 lg:flex lg:items-start">
+    <article class="flex-grow break-words" data-pagefind-body>
+      {
+        !!ogImage && (
+          <div class="aspect-h-9 aspect-w-16 mb-6">
+            <Image
+              src={ogImage.src}
+              alt={ogImage.alt}
+              class="object-cover"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+        )
+      }
+      <h1 class="title mb-3 sm:mb-1">{title}</h1>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <p class="font-semibold">
+          <FormattedDate date={publishedAt} options={dateFormat} />
+        </p>
+        {
+          !!updatedAt && (
+            <span class="bg-quote/10 text-quote rounded-lg p-1">
+              Last Updated:
+              <FormattedDate
+                class="ms-1"
+                date={updatedAt}
+                options={dateFormat}
+              />
+            </span>
+          )
+        }
+      </div>
+      <div class="prose prose-headings:font-semibold mt-12">
+        <slot />
+      </div>
+    </article>
+  </div>
+</BaseLayout>
