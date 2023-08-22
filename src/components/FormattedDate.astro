@@ -1,0 +1,22 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { config } from "../constants";
+
+type Props = HTMLAttributes<"time"> & {
+  date: Date;
+  options?: Intl.DateTimeFormatOptions;
+};
+
+function formatDate(date: Date, options?: Intl.DateTimeFormatOptions) {
+  return new Date(date).toLocaleDateString(config.date.locale, {
+    ...config.date.options,
+    ...(options && options),
+  });
+}
+
+const { date, options, ...attrs } = Astro.props;
+---
+
+<time datetime={date.toISOString()} {...attrs}>
+  {formatDate(date, options)}
+</time>

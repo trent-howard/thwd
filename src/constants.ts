@@ -3,6 +3,10 @@ export const menuItems: Array<{ title: string; path: string }> = [
     title: "Home",
     path: "/",
   },
+  {
+    title: "Posts",
+    path: "/posts",
+  },
 ];
 
 export type Config = {
@@ -10,6 +14,10 @@ export type Config = {
   title: string;
   description: string;
   ogLocale: string;
+  date: {
+    locale: string;
+    options: Intl.DateTimeFormatOptions;
+  };
 };
 
 export const config: Config = {
@@ -18,6 +26,14 @@ export const config: Config = {
   description:
     "Ramblings about tech, music, and anything else that takes my fancy",
   ogLocale: "en_AU",
+  date: {
+    locale: "en-AU",
+    options: {
+      day: "numeric",
+      month: "short",
+      year: "numeric",
+    },
+  },
 };
 
 export type Meta = {
