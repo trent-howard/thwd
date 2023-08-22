@@ -1,0 +1,17 @@
+---
+import { config } from "@/constants";
+
+const year = new Date().getFullYear();
+---
+
+<footer
+  class="mt-auto flex w-full flex-col items-center justify-center pb-4 pt-20 text-center align-top sm:flex-row sm:divide-x-2 sm:divide-dotted sm:divide-gray-800"
+>
+  <div class="px-4">
+    Copyright &copy; {year}{" "}
+    {config.author}
+  </div>
+  <a class="px-4" href="https://creativecommons.org/licenses/by-nc/4.0/"
+    >CC BY-NC 4.0</a
+  >
+</footer>
