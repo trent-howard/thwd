@@ -1,5 +1,4 @@
 ---
-import type { GetStaticPaths } from "astro";
 import type { CollectionEntry } from "astro:content";
 
 import { getCollection } from "astro:content";
@@ -21,8 +20,6 @@ export function sortPostsByDate(posts: CollectionEntry<"posts">[] = []) {
 
 const allPosts = await getCollection("posts");
 const posts = sortPostsByDate(allPosts);
-
-console.log(posts.map((p) => p.data));
 
 const meta = { title: "Posts" };
 ---

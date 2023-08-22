@@ -39,6 +39,9 @@ export const config: Config = {
 export type Meta = {
   title: string;
   description?: string;
-  ogImage?: string;
+  ogImage?: {
+    src: string;
+    alt: string;
+  };
   publishedAt?: string;
 };
