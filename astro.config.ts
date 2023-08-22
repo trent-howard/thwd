@@ -7,5 +7,5 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   site: "https://thwd.dev",
   integrations: [tailwind(), sitemap()],
-  compressHTML: true
+  compressHTML: true,
 });
