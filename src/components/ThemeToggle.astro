@@ -1,0 +1,66 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<script>
+  class ThemeToggle extends HTMLElement {
+    constructor() {
+      super();
+      const button = this.querySelector("button") as HTMLButtonElement;
+
+      if (button) {
+        // button clicked, fire event
+        button.addEventListener("click", (e) => {
+          if (e.currentTarget instanceof HTMLButtonElement) {
+            // isPressed === dark mode current on
+            let isPressed =
+              e.currentTarget.getAttribute("aria-pressed") === "true";
+
+            // invert isPressed
+            let themeChangeEvent = new CustomEvent("theme-change", {
+              detail: {
+                theme: isPressed ? "light" : "dark",
+              },
+            });
+            // dispatch event -> ThemeProvider.astro
+            document.documentElement.dispatchEvent(themeChangeEvent);
+            // toggle the aria-pressed attribute
+            button.setAttribute("aria-pressed", String(!isPressed));
+          }
+        });
+      }
+    }
+  }
+
+  customElements.define("theme-toggle", ThemeToggle);
+</script>
+
+<theme-toggle class="text-textColor ms-auto">
+  <button
+    type="button"
+    title="Toggle theme"
+    id="toggle-theme"
+    class="bg-secondary/[.5] ring-primary/[.5] group relative h-9 w-9 rounded-md p-2 transition-all hover:ring-2"
+    aria-label="Toggle Dark Mode"
+  >
+    <Icon
+      name="ph:sun-dim"
+      aria-hidden="true"
+      focusable="false"
+      class="absolute start-1/2 top-1/2 h-7 w-7 -translate-x-1/2 -translate-y-1/2 scale-0 opacity-0 transition-all group-aria-pressed:scale-100 group-aria-pressed:opacity-100"
+    />
+    <Icon
+      name="ph:moon-stars"
+      aria-hidden="true"
+      focusable="false"
+      class="opacity-0 transition-all group-aria-[pressed=false]:scale-100 group-aria-[pressed=false]:opacity-100"
+    />
+  </button>
+</theme-toggle>
+
+{/* Inlined to avoid FOUC. */}
+<script is:inline>
+const bodyThemeIsDark = document.documentElement.classList.contains("dark");
+const button = document.getElementById("toggle-theme");
+button.setAttribute("aria-pressed", String(bodyThemeIsDark));
+</script>

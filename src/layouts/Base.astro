@@ -3,6 +3,7 @@ import type { Meta } from "@/constants";
 import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import ThemeProvider from "@/components/ThemeProvider.astro";
 
 type Props = {
   meta: Meta;
@@ -23,6 +24,7 @@ const {
     />
   </head>
   <body>
+    <ThemeProvider />
     <Header />
     <main id="main" class="flex-1">
       <slot />
