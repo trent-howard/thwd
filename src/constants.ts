@@ -24,7 +24,7 @@ export const config: Config = {
   author: "Trent",
   title: "thwd.dev",
   description:
-    "Ramblings about tech, music, and anything else that takes my fancy",
+    "A Melbourne dev's thoughts on programming, music, food, and more.",
   ogLocale: "en_AU",
   date: {
     locale: "en-AU",
@@ -46,3 +46,21 @@ export type Meta = {
 // markdown headings that will be converted to links
 // and added to the post outline
 export const linkableMdHeadings = ["h1", "h2", "h3"];
+
+export const tehSocials = [
+  {
+    name: "Github",
+    iconName: "mdi:github",
+    url: "https://github.com/trent-howard",
+  },
+  {
+    name: "LinkedIn",
+    iconName: "mdi:linkedin",
+    url: "https://linkedin.com/in/thwrd",
+  },
+  {
+    name: "bandcamp",
+    iconName: "fa-brands:bandcamp",
+    url: "https://bandcamp.com/trenthoward",
+  },
+];

@@ -1,18 +1,49 @@
 ---
+import { Icon } from "astro-icon";
 import Base from "@/layouts/Base.astro";
+
+import { tehSocials } from "@/constants";
 ---
 
 <Base meta={{ title: "Home" }}>
+  <section class="mb-16">
+    <h1 class="title mb-6">👋 Heyo, welcome!</h1>
+    <p class="mb-4">
+      I'm Trent, a full-stack developer and musician from Melbourne. I'm
+      fascinated by the fast moving world of web development and love playing
+      around with new frameworks, languages, tools, and clound infra.
+    </p>
+    <p>
+      This is a place for me to share thoughts about programming, music, and
+      anything cool I learn!
+    </p>
+  </section>
   <section>
-    <h1 class="title mb-6">Hello World!</h1>
-    <p class="mb-4">
-      👋 Heyo, I'm building a blog with Astro! I'm just starting to define some
-      layouts and styles, but once that's done (if I can overcome my
-      indecisiveness) it should come together pretty quickly!
-    </p>
-    <p class="mb-4">
-      I gotta pick a font... and some colours... and maybe a dark theme... and
-      figure out some kind of logo...
-    </p>
+    <div class="flex flex-wrap items-center gap-x-4">
+      <p>You can find me on</p>
+      <ul class="flex flex-1 items-center gap-x-2 sm:flex-initial">
+        {
+          tehSocials.map(({ url, iconName, name }) => (
+            <li class="flex">
+              <a
+                class="inline-block p-1"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={name}
+              >
+                <Icon
+                  class="h-8 w-8"
+                  name={iconName}
+                  aria-hidden="true"
+                  focusable="false"
+                />
+                <span class="sr-only">{name}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </section>
 </Base>

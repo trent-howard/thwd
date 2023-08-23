@@ -31,7 +31,7 @@ const meta = { title: "Posts" };
 
 <Base meta={meta}>
   <h1 class="title mb-6">Posts</h1>
-  <div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
+  <div class="grid gap-y-16 sm:gap-x-8">
     <section aria-label="Post list">
       <ul class="space-y-8 text-start">
         {
@@ -39,12 +39,12 @@ const meta = { title: "Posts" };
             <li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
               <FormattedDate
                 date={post.data.publishedAt}
-                class="min-w-[120px]"
+                class="text-textColor/[.8] min-w-[120px]"
               />
               <a class="underline" href={`/posts/${post.slug}/`}>
                 {post.data.title}
               </a>
-              <q class="line-clamp-3 block text-sm italic">
+              <q class="text-accent2 line-clamp-3 block text-sm">
                 {post.data.description}
               </q>
             </li>
