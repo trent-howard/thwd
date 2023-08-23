@@ -10,6 +10,8 @@ interface Props {
   meta: Meta;
 }
 
+const isDev = import.meta.env.DEV;
+
 export function sortPostsByDate(posts: CollectionEntry<"posts">[] = []) {
   return posts.sort(
     (a, b) =>
@@ -18,7 +20,10 @@ export function sortPostsByDate(posts: CollectionEntry<"posts">[] = []) {
   );
 }
 
-const allPosts = await getCollection("posts");
+const allPosts = await getCollection(
+  "posts",
+  ({ data }) => isDev || !data?.draft
+);
 const posts = sortPostsByDate(allPosts);
 
 const meta = { title: "Posts" };
@@ -36,8 +41,12 @@ const meta = { title: "Posts" };
                 date={post.data.publishedAt}
                 class="min-w-[120px]"
               />
-              <a href={`/posts/${post.slug}/`}>{post.data.title}</a>
-              <q class="line-clamp-3 block italic">{post.data.description}</q>
+              <a class="underline" href={`/posts/${post.slug}/`}>
+                {post.data.title}
+              </a>
+              <q class="line-clamp-3 block text-sm italic">
+                {post.data.description}
+              </q>
             </li>
           ))
         }
