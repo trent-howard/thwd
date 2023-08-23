@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import plugin from "tailwindcss/plugin";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -13,6 +14,9 @@ module.exports = {
         secondary: "rgb(var(--theme-secondary) / <alpha-value>)",
         accent: "rgb(var(--theme-accent) / <alpha-value>)",
         accent2: "rgb(var(--theme-accent-2) / <alpha-value>)",
+      },
+      fontFamily: {
+        mono: ["JetBrains Mono", ...fontFamily.mono],
       },
       typography: (theme) => ({
         DEFAULT: {
