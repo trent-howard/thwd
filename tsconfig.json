@@ -5,6 +5,7 @@
     "paths": {
       "@/*": ["./*"],
       "@/constants": ["./constants.ts"],
+      "@/utils": ["./utils.ts"],
     }
   }
 }
