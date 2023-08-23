@@ -1,18 +1,18 @@
 ---
-import type { Meta } from "../constants";
-import { config } from "../constants";
+import type { Meta } from "@/constants";
+import { config } from "@/constants";
 
-import "../styles/global.css";
+import "@/styles/global.css";
 
 type Props = Meta;
 
-const { title, description, ogImage, publishedAt } = Astro.props;
+const { title, description, ogImageSrc, publishedAt } = Astro.props;
 
 const siteTitle = `${title} • ${config.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const siteDescription = description || config.description;
 const socialImageURL = new URL(
-  ogImage ? ogImage : "/default-social.jpg",
+  ogImageSrc ? ogImageSrc : "/default-social.jpg",
   Astro.url
 ).href;
 ---

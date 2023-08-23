@@ -1,14 +1,15 @@
 ---
-import type { Meta } from "../constants";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import type { Meta } from "@/constants";
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 
 type Props = {
   meta: Meta;
 };
 
 const {
-  meta: { title, description, ogImage, publishedAt },
+  meta: { title, description, ogImageSrc, publishedAt },
 } = Astro.props;
 ---
 
@@ -17,7 +18,7 @@ const {
     <BaseHead
       title={title}
       description={description}
-      ogImage={ogImage}
+      ogImageSrc={ogImageSrc}
       publishedAt={publishedAt}
     />
   </head>
@@ -26,5 +27,6 @@ const {
     <main id="main" class="flex-1">
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

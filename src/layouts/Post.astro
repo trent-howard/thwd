@@ -1,0 +1,97 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon";
+
+import BaseLayout from "@/layouts/Base.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import PostOutline from "@/components/post/PostOutline.astro";
+
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+
+const { post } = Astro.props;
+const {
+  data: { title, description, ogImage, publishedAt, updatedAt },
+} = post;
+const { headings } = await post.render();
+
+const dateFormat: Intl.DateTimeFormatOptions = {
+  month: "long",
+};
+---
+
+<script>
+  const button = document.getElementById("scroll-top") as HTMLButtonElement;
+  const target = document.getElementById("post-top") as HTMLDivElement;
+
+  function callback(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) => {
+      button.dataset.show = (!entry.isIntersecting).toString();
+    });
+  }
+
+  button.addEventListener("click", () => {
+    document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  const observer = new IntersectionObserver(callback);
+  observer.observe(target);
+</script>
+
+<BaseLayout
+  meta={{
+    title,
+    description,
+    publishedAt: publishedAt.toISOString(),
+    ogImageSrc: ogImage?.src.src,
+  }}
+>
+  <div class="gap-x-10 lg:flex lg:items-start">
+    <PostOutline headings={headings} />
+    <article class="flex-grow break-words" data-pagefind-body>
+      {
+        !!ogImage && (
+          <div id="post-top" class="aspect-h-9 aspect-w-16 mb-6">
+            <Image
+              src={ogImage.src}
+              alt={ogImage.alt}
+              class="object-cover"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+        )
+      }
+      <h1 class="title mb-3 sm:mb-1">{title}</h1>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
+        <p class="font-semibold">
+          <FormattedDate date={publishedAt} options={dateFormat} />
+        </p>
+        {
+          !!updatedAt && (
+            <span class="rounded-lg p-1">
+              Last updated:
+              <FormattedDate
+                class="ms-1"
+                date={updatedAt}
+                options={dateFormat}
+              />
+            </span>
+          )
+        }
+      </div>
+      <div class="prose mt-12">
+        <slot />
+      </div>
+    </article>
+  </div>
+  <button
+    id="scroll-top"
+    class="z-90 fixed bottom-8 end-4 flex h-10 w-10 translate-y-28 items-center justify-center rounded-full border-2 border-transparent bg-gray-200 stroke-gray-400 text-3xl opacity-0 transition-all duration-300 hover:border-blue-400 hover:text-blue-500 data-[show=true]:translate-y-0 data-[show=true]:opacity-70 data-[show=true]:hover:opacity-100 sm:end-8 sm:h-12 sm:w-12"
+    aria-label="Scroll to top"
+    data-show="false"
+    ><Icon class="h-6 w-6" name="icon-park-outline:to-top-one" />
+  </button>
+</BaseLayout>

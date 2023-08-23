@@ -1,0 +1,56 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+import { getCollection } from "astro:content";
+import Base from "@/layouts/Base.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import type { Meta } from "@/constants";
+
+interface Props {
+  meta: Meta;
+}
+
+const isDev = import.meta.env.DEV;
+
+export function sortPostsByDate(posts: CollectionEntry<"posts">[] = []) {
+  return posts.sort(
+    (a, b) =>
+      new Date(b.data.publishedAt).valueOf() -
+      new Date(a.data.publishedAt).valueOf()
+  );
+}
+
+const allPosts = await getCollection(
+  "posts",
+  ({ data }) => isDev || !data?.draft
+);
+const posts = sortPostsByDate(allPosts);
+
+const meta = { title: "Posts" };
+---
+
+<Base meta={meta}>
+  <h1 class="title mb-6">Posts</h1>
+  <div class="grid gap-y-16 sm:grid-cols-[3fr_1fr] sm:gap-x-8">
+    <section aria-label="Post list">
+      <ul class="space-y-8 text-start">
+        {
+          posts.map((post) => (
+            <li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
+              <FormattedDate
+                date={post.data.publishedAt}
+                class="min-w-[120px]"
+              />
+              <a class="underline" href={`/posts/${post.slug}/`}>
+                {post.data.title}
+              </a>
+              <q class="line-clamp-3 block text-sm italic">
+                {post.data.description}
+              </q>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </div>
+</Base>

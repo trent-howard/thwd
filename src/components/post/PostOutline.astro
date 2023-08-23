@@ -1,0 +1,55 @@
+---
+import type { MarkdownHeading } from "astro";
+import { linkableMdHeadings } from "@/constants";
+
+import RecursiveList from "./RecursiveList.astro";
+
+interface Props {
+  headings: MarkdownHeading[];
+}
+
+const { headings } = Astro.props;
+
+type MarkdownHeadingWithChildren = MarkdownHeading & {
+  children?: MarkdownHeadingWithChildren[];
+};
+export type MarkdownHeadingTree = MarkdownHeadingWithChildren[];
+
+function buildHeadingTree(headings: MarkdownHeading[]): MarkdownHeadingTree {
+  const root = { depth: 0, slug: "", text: "", children: [] };
+  const stack: MarkdownHeadingWithChildren[] = [root];
+
+  // a bit hacky, assumes linkableMdHeadings
+  // is sequential without gaps
+  const maxDepth = linkableMdHeadings.length;
+
+  for (const item of headings) {
+    if (item.depth > maxDepth) {
+      continue;
+    }
+    while (item.depth <= stack[stack.length - 1]!.depth) {
+      stack.pop();
+    }
+
+    const newNode = { ...item, children: [] } as MarkdownHeadingWithChildren;
+    stack[stack.length - 1]!.children!.push(newNode);
+    stack.push(newNode);
+  }
+
+  return root.children;
+}
+
+const headingTree = buildHeadingTree(headings);
+---
+
+{
+  !!headings.length && (
+    <aside
+      id="post-outline"
+      class="sticky top-20 order-2 -me-32 hidden basis-64 lg:block "
+    >
+      <h2 class="font-semibold">Contents</h2>
+      <RecursiveList headings={headingTree} />
+    </aside>
+  )
+}
