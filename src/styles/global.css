@@ -1,12 +1,36 @@
 @tailwind base;
 
 @layer base {
+  :root {
+    color-scheme: light;
+    --theme-text: 6 24 34;
+    --theme-background: 242 249 253;
+    --theme-primary: 91 107 225;
+    --theme-secondary: 236 197 177;
+    --theme-accent: 172 156 32;
+    --theme-accent-2: 4 2 1;
+  }
+
+  :root.dark {
+    color-scheme: dark;
+    --theme-text: 242 249 253;
+    --theme-background: 6 24 34;
+    --theme-primary: 91 107 225;
+    --theme-secondary: 4 2 1;
+    --theme-accent: 231 219 126;
+    --theme-accent-2: 236 197 177;
+  }
+
   html {
     @apply h-full scroll-smooth;
   }
 
   html body {
-    @apply mx-auto flex h-full max-w-3xl flex-col px-8 pt-16 text-base font-normal antialiased;
+    @apply bg-bgColor text-textColor mx-auto flex h-full max-w-3xl flex-col px-8 pt-16 text-base font-normal antialiased;
+  }
+
+  :focus {
+    @apply ring-primary/[.75] ring-offset-bgColor outline-none ring-4 ring-offset-2;
   }
 }
 
@@ -17,5 +41,5 @@
   @apply relative;
 }
 .md-title a {
-  @apply block no-underline before:absolute before:right-full before:block before:pr-1 before:opacity-100 before:content-["#"] before:hover:text-blue-700;
+  @apply before:hover:text-primary block rounded no-underline before:absolute before:right-full before:block before:pr-1 before:opacity-100 before:content-["#"];
 }
