@@ -16,7 +16,7 @@ module.exports = {
         accent2: "rgb(var(--theme-accent-2) / <alpha-value>)",
       },
       fontFamily: {
-        mono: ["JetBrains Mono", ...fontFamily.mono],
+        mono: ["JetBrains Mono Variable", ...fontFamily.mono],
       },
       typography: (theme) => ({
         DEFAULT: {
@@ -32,6 +32,9 @@ module.exports = {
             "--tw-prose-code": theme("colors.textColor / 1"),
             "--tw-prose-hr": `0.5px dashed ${theme("colors.textColor / 1")}`,
             "--tw-prose-th-borders": theme("colors.textColor / 1"),
+            code: {
+              fontWeight: 800,
+            },
           },
         },
       }),
