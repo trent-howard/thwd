@@ -29,7 +29,10 @@
     @apply bg-bgColor text-textColor mx-auto flex h-full max-w-3xl flex-col px-8 pt-16 text-base font-normal antialiased;
   }
 
-  :focus {
+  a {
+    @apply rounded;
+  }
+  :focus-visible {
     @apply ring-primary/[.75] ring-offset-bgColor outline-none ring-4 ring-offset-2;
   }
 }
