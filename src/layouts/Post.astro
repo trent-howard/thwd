@@ -20,6 +20,7 @@ const { headings } = await post.render();
 const dateFormat: Intl.DateTimeFormatOptions = {
   month: "long",
 };
+console.log(headings);
 ---
 
 <script>
@@ -51,9 +52,10 @@ const dateFormat: Intl.DateTimeFormatOptions = {
   <div class="gap-x-10 lg:flex lg:items-start">
     <PostOutline headings={headings} />
     <article class="flex-grow break-words" data-pagefind-body>
+      <span id="post-top"></span>
       {
         !!ogImage && (
-          <div id="post-top" class="aspect-h-9 aspect-w-16 mb-6">
+          <div class="aspect-h-9 aspect-w-16 mb-6">
             <Image
               src={ogImage.src}
               alt={ogImage.alt}
@@ -65,6 +67,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
         )
       }
       <h1 class="title mb-3 sm:mb-1">{title}</h1>
+      <p class="mb-3 text-sm italic sm:mb-1">{description}</p>
       <div class="flex flex-wrap items-center gap-x-3 gap-y-2">
         <p class="font-semibold">
           <FormattedDate date={publishedAt} options={dateFormat} />
