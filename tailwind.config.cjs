@@ -35,6 +35,10 @@ module.exports = {
             code: {
               fontWeight: 800,
             },
+            figcaption: {
+              "@apply -mt-6 border-l-2 border-accent2 pl-2 italic text-textColor":
+                "",
+            },
           },
         },
       }),
