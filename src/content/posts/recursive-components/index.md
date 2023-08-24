@@ -5,12 +5,13 @@ publishedAt: "24 August 2023"
 ogImage:
   src: "./recursive-components-og.png"
   alt: "recursive components post hero image"
-draft: true
 ---
 
 I _finally_ did the thing! After putting it off, proctrastinating by staring at other people's sites in the name of _"research"_, I did it - I built a blog! And in doing so, I found a neat little topic to write about.
 
-My quest for inspiration I noted some blogging sites have a nifty little table of contents feature that take the headings from the article, and spit out a nested list of links to each section. I **_had_** to have one for my own site.
+On my quest for inspiration I noted some blogging sites have a nifty little table of contents feature that take the headings from the article, and spit out a nested list of links to each section. I **_had_** to have one for my own site.
+
+If you look to your right and your display is big enough you should see exatly what I'm talking about.
 
 #### What are we cooking with?
 
@@ -126,7 +127,7 @@ There's definitely a grain of truth in that comic. At least in my experience, wh
 
 But ultimately, even if it's abstracted away by a fancy framework, we're just working with a big ole tree. Now and again you'll need to know how to work with it.
 
-This is a classic little algorithms exercise, like something you'd find on leetcode or be asked in an interview.
+This is a classic little algorithms exercise, like something you'd find on leetcode or a junior front-end dev interview.
 
 There's a couple of approaches you can take here - I ended up settling on a solution using a stack to keep track of the depth of my tree.
 
@@ -214,8 +215,16 @@ export const RecursiveList = ({ headings }) => (
 );
 ```
 
+And it's a simple as that! Add some styles, plug it into your app, and you're done!
+
+![finished product](./toc-finshed-product.png)
+
+<figcaption>The finished product, in the night-time theme to save the eyes of anyone reading in the dark. Next up, recursive blog posts!</figcaption>
+
 ## Wrapping up
 
 Recursive components are a great tool to have in your kitchen if you need to visualise hierarchical or tree like structures in UI.
 
 But to make your data fit you might need to sprinkle in some spicier algorithms than you're used to - okay, this analogy is stale, I'll stop.
+
+The source for this site is public, you can [check it out on GitHub](https://github.com/trent-howard/thwd). If you're specifically interested in the components that inspired this post, take a look in the [/src/components/post](https://github.com/trent-howard/thwd/tree/main/src/components/post) directory. I'll try to keep this updated if I ever move them around!
