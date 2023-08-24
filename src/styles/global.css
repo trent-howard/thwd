@@ -27,14 +27,15 @@
   }
 
   html body {
-    @apply bg-bgColor text-textColor mx-auto flex h-full max-w-3xl flex-col px-8 pt-16 text-base font-normal antialiased;
+    @apply mx-auto flex h-full max-w-3xl flex-col bg-bgColor px-8 pt-16 text-base font-normal text-textColor antialiased;
   }
 
-  a {
+  a,
+  img {
     @apply rounded;
   }
   :focus-visible {
-    @apply ring-primary/[.75] ring-offset-bgColor outline-none ring-4 ring-offset-2;
+    @apply outline-none ring-4 ring-primary/[.75] ring-offset-2 ring-offset-bgColor;
   }
 }
 
@@ -45,5 +46,5 @@
   @apply relative;
 }
 .md-title a {
-  @apply before:hover:text-primary block rounded no-underline before:absolute before:right-full before:block before:pr-1 before:opacity-100 before:content-["#"];
+  @apply block rounded no-underline before:absolute before:right-full before:block before:pr-1 before:opacity-100 before:content-["#"] before:hover:text-primary;
 }
