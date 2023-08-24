@@ -23,7 +23,7 @@ export default defineConfig({
       "rehype-slug",
       [
         "rehype-autolink-headings",
-        { behavior: "wrap", test: ["h1", "h2", "h3"] },
+        { behavior: "wrap", test: linkableMdHeadings },
       ],
       [addClasses, { [linkableMdHeadings.join(",")]: "md-title" }],
     ],
