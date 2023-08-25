@@ -35,12 +35,12 @@ import { Icon } from "astro-icon";
   customElements.define("theme-toggle", ThemeToggle);
 </script>
 
-<theme-toggle class="text-textColor ms-auto">
+<theme-toggle class="ms-auto text-textColor">
   <button
     type="button"
     title="Toggle theme"
     id="toggle-theme"
-    class="bg-secondary/[.5] ring-primary/[.5] ring-offset-bgColor group relative h-9 w-9 rounded-md p-2 ring-offset-2 transition-all hover:ring-4"
+    class="group relative h-9 w-9 rounded-md bg-secondary/[.5] p-2 ring-primary/[.75] ring-offset-2 ring-offset-bgColor transition-all hover:ring-4"
     aria-label="Toggle Dark Mode"
   >
     <Icon
