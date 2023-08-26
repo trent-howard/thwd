@@ -7,15 +7,15 @@ ogImage:
   alt: "recursive components post hero image"
 ---
 
-I _finally_ did the thing! After putting it off, proctrastinating by staring at other people's sites in the name of _"research"_, I did it - I built a blog! And in doing so, I found a neat little topic to write about.
+I _finally_ did the thing! After putting it off, procrastinating by staring at other people's sites in the name of _"research"_, I did it - I built a blog! And in doing so, I found a neat little topic to write about.
 
 On my quest for inspiration I noted some blogging sites have a nifty little table of contents feature that take the headings from the article, and spit out a nested list of links to each section. I **_had_** to have one for my own site.
 
-If you look to your right and your display is big enough you should see exatly what I'm talking about.
+If you look to your right and your display is big enough you should see exactly what I'm talking about.
 
 #### What are we cooking with?
 
-I built this site using [Astro](https://astro.build), TypeScript, [Tailwind CSS](https://tailwindcss.com). It's a staticly generated site, but these concepts don't look too different in frameworks like React, Vue, or Svelte.
+I built this site using [Astro](https://astro.build), TypeScript, [Tailwind CSS](https://tailwindcss.com). It's a statically generated site, but these concepts don't look too different in frameworks like React, Vue, or Svelte.
 
 ## Recipe
 
