@@ -6,6 +6,7 @@ import sitemap from "@astrojs/sitemap";
 import addClasses from "./rehype-add-classes.mjs";
 // import fails on build if we use the @ path shortcut
 import { linkableMdHeadings } from "./src/constants";
+import nightowl from "./night-owl-color-theme.json";
 
 // https://astro.build/config
 export default defineConfig({
@@ -30,7 +31,7 @@ export default defineConfig({
     ],
     shikiConfig: {
       wrap: true,
-      theme: "poimandres",
+      theme: nightowl,
     },
   },
 });
