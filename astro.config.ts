@@ -1,4 +1,5 @@
 import { defineConfig, sharpImageService } from "astro/config";
+import prefetch from "@astrojs/prefetch";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 
@@ -9,7 +10,7 @@ import { linkableMdHeadings } from "./src/constants";
 // https://astro.build/config
 export default defineConfig({
   site: "https://thwd.dev",
-  integrations: [tailwind(), sitemap()],
+  integrations: [tailwind(), sitemap(), prefetch()],
   compressHTML: true,
   experimental: {
     assets: true,

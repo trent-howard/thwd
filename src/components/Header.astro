@@ -12,12 +12,12 @@ const url = new URL(Astro.request.url);
     </a>
     <nav
       id="navigation-menu"
-      class="text-primary divide-primary -ms-4 mt-1 flex flex-row items-center divide-x-2 divide-dotted font-semibold"
+      class="-ms-4 mt-1 flex flex-row items-center divide-x-2 divide-dotted divide-primary font-semibold text-primary"
       aria-label="Main menu"
     >
       {
         menuItems.map(({ title, path }) => (
-          <a href={path} class="px-4 hover:underline">
+          <a href={path} class="px-4 hover:underline" rel="prefetch">
             {title}
           </a>
         ))

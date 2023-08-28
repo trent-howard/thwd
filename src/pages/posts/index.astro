@@ -34,12 +34,12 @@ const meta = { title: "Posts" };
             <li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
               <FormattedDate
                 date={post.data.publishedAt}
-                class="text-textColor/[.8] min-w-[120px]"
+                class="min-w-[120px] text-textColor/[.8]"
               />
-              <a class="underline" href={`/posts/${post.slug}/`}>
+              <a class="underline" href={`/posts/${post.slug}/`} rel="prefetch">
                 {post.data.title}
               </a>
-              <q class="text-accent2 line-clamp-3 block text-sm">
+              <q class="line-clamp-3 block text-sm text-accent2">
                 {post.data.description}
               </q>
             </li>
