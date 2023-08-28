@@ -1,5 +1,7 @@
 @import "@fontsource-variable/jetbrains-mono";
 @tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
   :root {
@@ -27,7 +29,7 @@
   }
 
   html body {
-    @apply mx-auto flex h-full max-w-3xl flex-col bg-bgColor px-8 pt-16 text-base font-normal text-textColor antialiased;
+    @apply mx-auto flex h-full max-w-[88vw] flex-col bg-bgColor pt-16 text-base font-normal text-textColor antialiased md:max-w-3xl md:px-8;
   }
 
   a,
@@ -37,14 +39,19 @@
   :focus-visible {
     @apply outline-none ring-4 ring-primary/[.75] ring-offset-2 ring-offset-bgColor;
   }
-}
-
-@tailwind components;
-@tailwind utilities;
-
-.md-title {
-  @apply relative;
-}
-.md-title a {
-  @apply block rounded no-underline before:absolute before:right-full before:block before:pr-1 before:opacity-100 before:content-["#"] before:hover:text-primary;
+  .prose pre {
+    @apply -mx-[6vw] w-screen rounded-none md:mx-auto md:w-full md:rounded;
+  }
+  .prose > code {
+    @apply font-extrabold;
+  }
+  .prose figcaption {
+    @apply -mt-6 border-l-2 border-accent2 pl-2 italic text-textColor;
+  }
+  .md-title {
+    @apply relative;
+  }
+  .md-title a {
+    @apply block rounded no-underline before:absolute before:right-full before:block before:pr-1 before:opacity-100 before:content-["#"] before:hover:text-primary;
+  }
 }
