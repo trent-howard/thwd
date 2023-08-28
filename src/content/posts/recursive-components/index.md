@@ -163,7 +163,14 @@ Given our input above, it'll transform it into a nice tree
         depth: 3,
         slug: "h3-a-sub-heading-of-the-first",
         text: "H3 a sub heading of the first",
-        children: [],
+        children: [
+          {
+            depth: 4,
+            slug: "an-h4-nested-even-further",
+            text: "An H4 nested even further",
+            children: [],
+          },
+        ],
       },
     ],
   },
@@ -226,5 +233,7 @@ And it's a simple as that! Add some styles, plug it into your app, and you're do
 Recursive components are a great tool to have in your kitchen if you need to visualise hierarchical or tree like structures in UI.
 
 But to make your data fit you might need to sprinkle in some spicier algorithms than you're used to - okay, this analogy is stale, I'll stop.
+
+With [the typography I've chosen](https://tailwindcss.com/docs/typography-plugin) there's no default styling for `H5` and `H6` level headings, and `H4` is small enough it hardly seems heading worthwhile using it as a section heading. Instead I've configured a maximum depth for the heading anchor links and table of contents generation in the live implementation.
 
 The source for this site is public, you can [check it out on GitHub](https://github.com/trent-howard/thwd). If you're specifically interested in the components that inspired this post, take a look in the [/src/components/post](https://github.com/trent-howard/thwd/tree/main/src/components/post) directory. I'll try to keep this updated if I ever move them around!
