@@ -12,6 +12,10 @@
     --theme-secondary: 236 197 177;
     --theme-accent: 172 156 32;
     --theme-accent-2: 4 2 1;
+    --theme-insCodeBg: 52 211 153; /* emerald-400 */
+    --theme-insCodeBorder: 110 231 183; /* emerald-300 */
+    --theme-delCodeBg: 239 68 68; /* red-500 */
+    --theme-delCodeBorder: 248 113 113; /* red-400 */
   }
 
   :root.dark {
@@ -22,6 +26,10 @@
     --theme-secondary: 4 2 1;
     --theme-accent: 231 219 126;
     --theme-accent-2: 236 197 177;
+    --theme-insCodeBg: 52 211 153; /* emerald-400 */
+    --theme-insCodeBorder: 110 231 183; /* emerald-300 */
+    --theme-delCodeBg: 239 68 68; /* red-500 */
+    --theme-delCodeBorder: 248 113 113; /* red-400 */
   }
 
   html {
@@ -39,19 +47,44 @@
   :focus-visible {
     @apply outline-none ring-4 ring-primary/[.75] ring-offset-2 ring-offset-bgColor;
   }
-  .prose pre {
-    @apply -mx-[6vw] w-screen rounded-none md:mx-auto md:w-full md:rounded;
-  }
-  .prose > code {
-    @apply font-extrabold;
-  }
-  .prose figcaption {
-    @apply -mt-6 border-l-2 border-accent2 pl-2 italic text-textColor;
-  }
-  .md-title {
+
+  /* markdown autolink heading styles */
+  .prose .md-title {
     @apply relative;
   }
-  .md-title a {
+  .prose .md-title a {
     @apply block rounded no-underline before:absolute before:right-full before:block before:pr-1 before:opacity-100 before:content-["#"] before:hover:text-primary;
+  }
+
+  /* expressive-code style overrides */
+  .prose .ec {
+    @apply -mx-[6vw] w-screen md:mx-auto md:w-full;
+  }
+  .prose .ec pre > code {
+    @apply font-mono !important;
+  }
+  .prose .ec .frame {
+    @apply shadow-none !important;
+  }
+  .prose .ec .frame.has-title pre {
+    @apply rounded-none border-none md:rounded-b !important;
+  }
+  .prose .ec .frame.is-terminal figcaption {
+    @apply hidden !important;
+  }
+  .prose .ec .frame pre {
+    @apply rounded-none border-none md:rounded !important;
+  }
+  .prose .ec > .frame > .header {
+    @apply rounded-none border-none md:rounded-t !important;
+  }
+  .prose .ec .frame .title {
+    @apply w-full border-none font-mono text-xs !important;
+  }
+  .prose p > code {
+    @apply font-extrabold;
+  }
+  .prose > figcaption {
+    @apply -mt-6 border-l-2 border-accent2 pl-2 italic text-textColor;
   }
 }

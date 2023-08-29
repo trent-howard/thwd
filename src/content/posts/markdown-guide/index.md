@@ -99,10 +99,12 @@ The blockquote element represents content that is quoted from another source, op
 
 #### Syntax
 
-we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntac, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
+we can use 3 backticks ``` in new line and write snippet and close with 3 backticks on new line and to highlight language specific syntax, write one word of language name after first 3 backticks, for eg. html, javascript, css, markdown, typescript, txt, bash
+
+It supports marking line ranges or words with `mark`, `ins` for inserted lines, and `del` for deleted.
 
 ````markdown
-```html
+```html title="index.html" mark={4-5} ins={8} del={9} ins="Hello World" del="Test"
 <!doctype html>
 <html lang="en">
   <head>
@@ -110,7 +112,9 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
     <title>Example HTML5 Document</title>
   </head>
   <body>
-    <p>Test</p>
+    <p>added</p>
+    <p>deleted</p>
+    <p>TestHello World</p>
   </body>
 </html>
 ```
@@ -118,7 +122,7 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
 
 Output
 
-```html
+```html title="index.html" mark={4-5} ins={8} del={9} ins="Hello World" del="Test"
 <!doctype html>
 <html lang="en">
   <head>
@@ -126,9 +130,17 @@ Output
     <title>Example HTML5 Document</title>
   </head>
   <body>
-    <p>Test</p>
+    <p>added</p>
+    <p>deleted</p>
+    <p>TestHello World</p>
   </body>
 </html>
+```
+
+Here's a terminal block
+
+```bash
+npm install
 ```
 
 ## List Types
