@@ -1,4 +1,4 @@
-import { defineConfig, sharpImageService } from "astro/config";
+import { defineConfig } from "astro/config";
 import prefetch from "@astrojs/prefetch";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
@@ -37,14 +37,6 @@ export default defineConfig({
       },
     }),
   ],
-  compressHTML: true,
-  experimental: {
-    assets: true,
-  },
-  image: {
-    // https://docs.astro.build/en/guides/assets/#using-sharp
-    service: sharpImageService(),
-  },
   markdown: {
     rehypePlugins: [
       "rehype-slug",
