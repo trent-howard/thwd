@@ -121,7 +121,7 @@ We should be able to transform this list into a tree structure that we can more 
 
 ![front-end job interview algorithms comic](./jobs-requirements.webp)
 
-<figcaption>I had to stop myself from just pasting in a dozen of <a href="https://vincentdnl.com/">vincentdnl's</a> comics and calling it a job well done</figcaption>
+<figcaption>I had to stop myself from just pasting in a dozen of <a target="_blank" rel="noopener noreferrer" href="https://vincentdnl.com/">vincentdnl's↗</a> comics and calling it a job well done</figcaption>
 
 There's definitely a grain of truth in that comic. At least in my experience, when working in front-end land I never really needed much in the way of algorithms. If you use the right data structures everything just kind of falls into place.
 

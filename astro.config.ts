@@ -45,6 +45,17 @@ export default defineConfig({
         { behavior: "wrap", test: linkableMdHeadings },
       ],
       [addClasses, { [linkableMdHeadings.join(",")]: "md-title" }],
+      [
+        "rehype-external-links",
+        {
+          target: "_blank",
+          rel: ["noreferrer noopener"],
+          content: {
+            type: "text",
+            value: "↗",
+          },
+        },
+      ],
     ],
   },
 });
