@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   astro:
-    specifier: ^3.0.3
-    version: 3.0.3
+    specifier: ^3.0.7
+    version: 3.0.7
 
 devDependencies:
   '@astrojs/prefetch':
@@ -18,7 +18,7 @@ devDependencies:
     version: 3.0.0
   '@astrojs/tailwind':
     specifier: ^5.0.0
-    version: 5.0.0(astro@3.0.3)(tailwindcss@3.3.3)
+    version: 5.0.0(astro@3.0.7)(tailwindcss@3.3.3)
   '@fontsource-variable/jetbrains-mono':
     specifier: ^5.0.9
     version: 5.0.9
@@ -39,7 +39,7 @@ devDependencies:
     version: 6.5.0(eslint@8.48.0)(typescript@5.1.6)
   astro-expressive-code:
     specifier: ^0.22.2
-    version: 0.22.2(astro@3.0.3)
+    version: 0.22.2(astro@3.0.7)
   astro-icon:
     specifier: ^0.8.1
     version: 0.8.1
@@ -74,17 +74,17 @@ devDependencies:
     specifier: ^0.12.0
     version: 0.12.0
   prettier-plugin-tailwindcss:
-    specifier: ^0.5.3
-    version: 0.5.3(prettier-plugin-astro@0.12.0)(prettier@3.0.3)
+    specifier: ^0.5.4
+    version: 0.5.4(prettier-plugin-astro@0.12.0)(prettier@3.0.3)
   rehype-autolink-headings:
     specifier: ^6.1.1
     version: 6.1.1
   rehype-external-links:
-    specifier: ^2.1.0
-    version: 2.1.0
+    specifier: ^3.0.0
+    version: 3.0.0
   rehype-slug:
-    specifier: ^5.1.0
-    version: 5.1.0
+    specifier: ^6.0.0
+    version: 6.0.0
   sharp:
     specifier: ^0.32.5
     version: 0.32.5
@@ -121,13 +121,13 @@ packages:
   /@astrojs/internal-helpers@0.2.0:
     resolution: {integrity: sha512-NQ4ppp1CM0HNkKbJNM4saVSfmUYzGlRalF6wx7F6T/MYHYSWGuojY89/oFTy4t8VlOGUCUijlsVNNeziWaUo5g==}
 
-  /@astrojs/markdown-remark@3.0.0(astro@3.0.3):
+  /@astrojs/markdown-remark@3.0.0(astro@3.0.7):
     resolution: {integrity: sha512-s8I49Je4++ImgYAgwL32HgN8m6we2qz3RtBpN4AjObMODPwDylmzUHZksD8Toy31q/P59ED3MuwphqOGm9l03w==}
     peerDependencies:
       astro: ^3.0.0
     dependencies:
       '@astrojs/prism': 3.0.0
-      astro: 3.0.3
+      astro: 3.0.7
       github-slugger: 2.0.0
       import-meta-resolve: 3.0.0
       rehype-raw: 6.1.1
@@ -162,13 +162,13 @@ packages:
       zod: 3.21.1
     dev: true
 
-  /@astrojs/tailwind@5.0.0(astro@3.0.3)(tailwindcss@3.3.3):
+  /@astrojs/tailwind@5.0.0(astro@3.0.7)(tailwindcss@3.3.3):
     resolution: {integrity: sha512-bMZZNNm/SW+ijUKMQDhdiuNWDdR3CubEKUHb2Ran4Arx1ikWn/kKIkFDXUV+MUnsLa7s19x9VMRlARRyKbqMkQ==}
     peerDependencies:
       astro: ^3.0.0
       tailwindcss: ^3.0.24
     dependencies:
-      astro: 3.0.3
+      astro: 3.0.7
       autoprefixer: 10.4.15(postcss@8.4.29)
       postcss: 8.4.29
       postcss-load-config: 4.0.1(postcss@8.4.29)
@@ -177,8 +177,8 @@ packages:
       - ts-node
     dev: true
 
-  /@astrojs/telemetry@3.0.0:
-    resolution: {integrity: sha512-RhFlEXTiT0gbWX1osMuPS9IWm1SwhQmCZVAdAixrPyZ0xiLlHfw3Nkw3z6IYuzX3hqbx24G4XmkT/akBMBqxPg==}
+  /@astrojs/telemetry@3.0.1:
+    resolution: {integrity: sha512-7zJMuikRDQ0LLLivteu0+y4pqdgznrChFiRrY3qmKlOEkLWD1T3u1a5M970lvpErP7Vgh4P298JBPjv8LTj+sw==}
     engines: {node: '>=18.14.1'}
     dependencies:
       ci-info: 3.8.0
@@ -1178,6 +1178,10 @@ packages:
       eslint-visitor-keys: 3.4.3
     dev: true
 
+  /@ungap/structured-clone@1.2.0:
+    resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
+    dev: true
+
   /acorn-jsx@5.3.2(acorn@8.10.0):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -1341,12 +1345,12 @@ packages:
       - supports-color
     dev: true
 
-  /astro-expressive-code@0.22.2(astro@3.0.3):
+  /astro-expressive-code@0.22.2(astro@3.0.7):
     resolution: {integrity: sha512-pmyuTJcEzfYzxPNBsIEjVNTzgWHxDGiv4D/oJusvOm30x7ETADMusqf9uYmJ6rS1jlwAgfaUWm7vTv6SaxWrSw==}
     peerDependencies:
       astro: ^2.0.0 || ^3.0.0-beta
     dependencies:
-      astro: 3.0.3
+      astro: 3.0.7
       remark-expressive-code: 0.22.2
     dev: true
 
@@ -1358,15 +1362,15 @@ packages:
       svgo: 2.8.0
     dev: true
 
-  /astro@3.0.3:
-    resolution: {integrity: sha512-bugdGn9wIniVFbfyAHYtF9bc9pZpPaEs3gJAnK/XWROxCBAI2UQjR6lQuWM20iCc3snqu7GDgoW2MdzO7WFZZw==}
+  /astro@3.0.7:
+    resolution: {integrity: sha512-slUnDBXfxMzq5abE4svcKbaeYC/tHZsJYOrzwDNU9lLye3/4cqYP7OuHMTXiRlx7LSpHQlUhwbMe2HqCv2GKag==}
     engines: {node: '>=18.14.1', npm: '>=6.14.0'}
     hasBin: true
     dependencies:
       '@astrojs/compiler': 2.0.1
       '@astrojs/internal-helpers': 0.2.0
-      '@astrojs/markdown-remark': 3.0.0(astro@3.0.3)
-      '@astrojs/telemetry': 3.0.0
+      '@astrojs/markdown-remark': 3.0.0(astro@3.0.7)
+      '@astrojs/telemetry': 3.0.1
       '@babel/core': 7.22.10
       '@babel/generator': 7.22.10
       '@babel/parser': 7.22.10
@@ -2750,11 +2754,23 @@ packages:
       '@types/hast': 2.3.5
     dev: true
 
+  /hast-util-heading-rank@3.0.0:
+    resolution: {integrity: sha512-EJKb8oMUXVHcWZTDepnr+WNbfnXKFNf9duMesmr4S8SXTJBJ9M4Yok08pu9vxdJwdlGRhVumk9mEhkEvKGifwA==}
+    dependencies:
+      '@types/hast': 3.0.0
+    dev: true
+
   /hast-util-is-element@2.1.3:
     resolution: {integrity: sha512-O1bKah6mhgEq2WtVMk+Ta5K7pPMqsBBlmzysLdcwKVrqzZQ0CHqUPiIVspNhAG1rvxpvJjtGee17XfauZYKqVA==}
     dependencies:
       '@types/hast': 2.3.5
       '@types/unist': 2.0.7
+    dev: true
+
+  /hast-util-is-element@3.0.0:
+    resolution: {integrity: sha512-Val9mnv2IWpLbNPqc/pUem+a7Ipj2aHacCwgNfTiK0vJKl0LF+4Ba4+v1oPHFpf3bLYmreq0/l3Gud9S5OH42g==}
+    dependencies:
+      '@types/hast': 3.0.0
     dev: true
 
   /hast-util-parse-selector@3.1.1:
@@ -2822,12 +2838,6 @@ packages:
       space-separated-tokens: 2.0.2
       web-namespaces: 2.0.1
       zwitch: 2.0.4
-
-  /hast-util-to-string@2.0.0:
-    resolution: {integrity: sha512-02AQ3vLhuH3FisaMM+i/9sm4OXGSq1UhOOCpTLLQtHdL3tZt7qil69r8M8iDkZYyC0HCFylcYoP+8IO7ddta1A==}
-    dependencies:
-      '@types/hast': 2.3.5
-    dev: true
 
   /hast-util-to-string@3.0.0:
     resolution: {integrity: sha512-OGkAxX1Ua3cbcW6EJ5pT/tslVb90uViVkcJ4ZZIMW/R33DX/AkcJcRrPebPwJkHYwlDHXz4aIwvAAaAdtrACFA==}
@@ -4074,8 +4084,8 @@ packages:
       sass-formatter: 0.7.7
     dev: true
 
-  /prettier-plugin-tailwindcss@0.5.3(prettier-plugin-astro@0.12.0)(prettier@3.0.3):
-    resolution: {integrity: sha512-M5K80V21yM+CTm/FEFYRv9/9LyInYbCSXpIoPAKMm8zy89IOwdiA2e4JVbcO7tvRtAQWz32zdj7/WKcsmFyAVg==}
+  /prettier-plugin-tailwindcss@0.5.4(prettier-plugin-astro@0.12.0)(prettier@3.0.3):
+    resolution: {integrity: sha512-QZzzB1bID6qPsKHTeA9qPo1APmmxfFrA5DD3LQ+vbTmAnY40eJI7t9Q1ocqel2EKMWNPLJqdTDWZj1hKYgqSgg==}
     engines: {node: '>=14.21.3'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
@@ -4217,16 +4227,15 @@ packages:
       unist-util-visit: 4.1.2
     dev: true
 
-  /rehype-external-links@2.1.0:
-    resolution: {integrity: sha512-2YMJZVM1hxZnwl9IPkbN5Pjn78kXkAX7lq9VEtlaGA29qIls25vZN+ucNIJdbQUe+9NNFck17BiOhGmsD6oLIg==}
+  /rehype-external-links@3.0.0:
+    resolution: {integrity: sha512-yp+e5N9V3C6bwBeAC4n796kc86M4gJCdlVhiMTxIrJG5UHDMh+PJANf9heqORJbt1nrCbDwIlAZKjANIaVBbvw==}
     dependencies:
-      '@types/hast': 2.3.5
-      extend: 3.0.2
-      hast-util-is-element: 2.1.3
+      '@types/hast': 3.0.0
+      '@ungap/structured-clone': 1.2.0
+      hast-util-is-element: 3.0.0
       is-absolute-url: 4.0.1
       space-separated-tokens: 2.0.2
-      unified: 10.1.2
-      unist-util-visit: 4.1.2
+      unist-util-visit: 5.0.0
     dev: true
 
   /rehype-parse@8.0.5:
@@ -4244,16 +4253,14 @@ packages:
       hast-util-raw: 7.2.3
       unified: 10.1.2
 
-  /rehype-slug@5.1.0:
-    resolution: {integrity: sha512-Gf91dJoXneiorNEnn+Phx97CO7oRMrpi+6r155tTxzGuLtm+QrI4cTwCa9e1rtePdL4i9tSO58PeSS6HWfgsiw==}
+  /rehype-slug@6.0.0:
+    resolution: {integrity: sha512-lWyvf/jwu+oS5+hL5eClVd3hNdmwM1kAC0BUvEGD19pajQMIzcNUd/k9GsfQ+FfECvX+JE+e9/btsKH0EjJT6A==}
     dependencies:
-      '@types/hast': 2.3.5
+      '@types/hast': 3.0.0
       github-slugger: 2.0.0
-      hast-util-has-property: 2.0.1
-      hast-util-heading-rank: 2.1.1
-      hast-util-to-string: 2.0.0
-      unified: 10.1.2
-      unist-util-visit: 4.1.2
+      hast-util-heading-rank: 3.0.0
+      hast-util-to-string: 3.0.0
+      unist-util-visit: 5.0.0
     dev: true
 
   /rehype-stringify@9.0.4:
