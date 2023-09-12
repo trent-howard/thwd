@@ -32,6 +32,8 @@ module.exports = {
             "--tw-prose-code": theme("colors.textColor / 1"),
             "--tw-prose-hr": `0.5px dashed ${theme("colors.textColor / 1")}`,
             "--tw-prose-th-borders": theme("colors.textColor / 1"),
+            "--tw-prose-kbd": theme("colors.textColor / 1"),
+            "--tw-prose-kbd-shadows": "unset",
           },
         },
       }),
