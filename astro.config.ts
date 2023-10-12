@@ -29,10 +29,10 @@ export default defineConfig({
       },
       textMarkers: {
         styleOverrides: {
-          insBackground: "rgb(var(--theme-insCodeBg)/ .5)",
-          insBorderColor: "rgb(var(--theme-insCodeBorder)/ .5)",
-          delBackground: "rgb(var(--theme-delCodeBg)/ .4)",
-          delBorderColor: "rgb(var(--theme-delCodeBorder)/ .5)",
+          insBackground: "rgb(var(--theme-insCodeBg)/ .25)",
+          insBorderColor: "rgb(var(--theme-insCodeBorder)/ .7)",
+          delBackground: "rgb(var(--theme-delCodeBg)/ .25)",
+          delBorderColor: "rgb(var(--theme-delCodeBorder)/ .7)",
         },
       },
     }),
