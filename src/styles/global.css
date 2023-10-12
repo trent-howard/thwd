@@ -81,6 +81,9 @@
   .prose .ec .frame .title {
     @apply w-full border-none font-mono text-xs !important;
   }
+  .prose .ec .frame.is-terminal {
+    --button-spacing: 0.4rem !important;
+  }
   .prose .ec .copy button {
     @apply h-8 w-8 ring-offset-2 ring-offset-[#0b253a] focus-visible:border-none focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 !important;
   }
