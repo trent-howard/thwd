@@ -270,7 +270,7 @@ pnpm i -D esbuild tsx
 
 Then add some scripts to the `package.json` and we're pretty much done!
 
-```json title="package.json ins{8-9}"
+```json title="package.json" ins={8-9}
 {
   "name": "modern-node-typescript",
   "version": "1.0.0",
