@@ -56,11 +56,16 @@
     @apply block rounded no-underline before:right-full before:inline-block before:pr-1 before:opacity-100 before:content-["#"] before:hover:text-primary sm:before:absolute sm:before:inline;
   }
 
-  /* expressive-code style overrides */
+  /* full width code blocks and hero image at small widths */
   .hero-container,
   .prose .ec {
     @apply -mx-[3vw] w-screen md:mx-auto md:w-full;
   }
+  .hero-container > img {
+    @apply rounded-none sm:rounded;
+  }
+
+  /* expressive-code style overrides */
   .prose .ec pre > code {
     @apply font-mono !important;
   }
