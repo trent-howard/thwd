@@ -45,7 +45,7 @@ module.exports = {
     plugin(function ({ addComponents }) {
       addComponents({
         ".title": {
-          "@apply text-3xl font-semibold": {},
+          "@apply text-3xl font-bold": {},
         },
       });
     }),

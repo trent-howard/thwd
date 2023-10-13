@@ -42,7 +42,11 @@ export default defineConfig({
       "rehype-slug",
       [
         "rehype-autolink-headings",
-        { behavior: "wrap", test: linkableMdHeadings },
+        {
+          behavior: "wrap",
+          test: linkableMdHeadings,
+          properties: { className: "not-prose" },
+        },
       ],
       [addClasses, { [linkableMdHeadings.join(",")]: "md-title" }],
       [
