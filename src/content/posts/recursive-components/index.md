@@ -197,28 +197,28 @@ Now we've got our data in order we just need a component to render it. This bit'
 We just need to `map()` over our headings and return a list item for each one. If the current heading has any children, we'll call the component again with the children as the input!
 
 ```tsx
-<ul>
+<ol>
   {headings.map((h) => (
     <li>
       <a href={`#${h.slug}`}>{h.text}</a>
       {!!h.children.length && <Astro.self headings={h.children} />}
     </li>
   ))}
-</ul>
+</ol>
 ```
 
 Astro has this `Astro.self` component which is just the current component you're writing, but if you were doing this with React you'd just call your function component by name like so
 
 ```tsx
 export const RecursiveList = ({ headings }) => (
-  <ul>
+  <ol>
     {headings.map((h) => (
       <li key={h.slug}>
         <a href={`#${h.slug}`}>{h.text}</a>
         {!!h.children.length && <RecursiveList headings={h.children} />}
       </li>
     ))}
-  </ul>
+  </ol>
 );
 ```
 
