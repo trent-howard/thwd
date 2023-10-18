@@ -53,7 +53,7 @@
     @apply relative;
   }
   .prose .md-title a {
-    @apply block rounded no-underline before:right-full before:inline-block before:pr-1 before:opacity-100 before:content-["#"] before:hover:text-primary sm:before:absolute sm:before:inline;
+    @apply block rounded no-underline before:right-full before:inline-block before:pr-1 before:opacity-100 before:content-["#"] before:hover:text-primary md:before:absolute md:before:inline;
   }
 
   /* full width code blocks and hero image at small widths */
