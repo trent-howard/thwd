@@ -62,7 +62,7 @@
     @apply -mx-[3vw] w-screen md:mx-auto md:w-full;
   }
   .hero-container > img {
-    @apply rounded-none sm:rounded;
+    @apply rounded-none md:rounded;
   }
 
   /* expressive-code style overrides */
