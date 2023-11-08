@@ -58,7 +58,7 @@
 
   /* full width code blocks and hero image at small widths */
   .hero-container,
-  .prose .ec {
+  .prose .expressive-code {
     @apply -mx-[3vw] w-screen md:mx-auto md:w-full;
   }
   .hero-container > img {
@@ -66,31 +66,31 @@
   }
 
   /* expressive-code style overrides */
-  .prose .ec pre > code {
+  .prose .expressive-code pre > code {
     @apply font-mono !important;
   }
-  .prose .ec .frame {
+  .prose .expressive-code .frame {
     @apply shadow-none !important;
   }
-  .prose .ec .frame.has-title pre {
+  .prose .expressive-code .frame.has-title pre {
     @apply rounded-none border-none md:rounded-b !important;
   }
-  .prose .ec .frame.is-terminal figcaption {
+  .prose .expressive-code .frame.is-terminal figcaption {
     @apply hidden !important;
   }
-  .prose .ec .frame pre {
+  .prose .expressive-code .frame pre {
     @apply rounded-none border-none md:rounded !important;
   }
-  .prose .ec > .frame > .header {
+  .prose .expressive-code > .frame > .header {
     @apply rounded-none border-none md:rounded-t !important;
   }
-  .prose .ec .frame .title {
+  .prose .expressive-code .frame .title {
     @apply w-full border-none font-mono text-xs !important;
   }
-  .prose .ec .frame.is-terminal {
+  .prose .expressive-code .frame.is-terminal {
     --button-spacing: 0.4rem !important;
   }
-  .prose .ec .copy button {
+  .prose .expressive-code .copy button {
     @apply h-8 w-8 ring-offset-2 ring-offset-[#0b253a] focus-visible:border-none focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 !important;
   }
   .prose p > code {

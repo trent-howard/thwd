@@ -20,15 +20,11 @@ export default defineConfig({
     sitemap(),
     prefetch(),
     astroExpressiveCode({
-      theme: new ExpressiveCodeTheme(nightowl),
+      themes: [new ExpressiveCodeTheme(nightowl)],
       useThemedScrollbars: false,
-      frames: {
-        styleOverrides: {
-          tooltipSuccessBackground: "rgb(var(--theme-primary) / 1)",
-        },
-      },
-      textMarkers: {
-        styleOverrides: {
+      styleOverrides: {
+        frames: { tooltipSuccessBackground: "rgb(var(--theme-primary) / 1)" },
+        textMarkers: {
           insBackground: "rgb(var(--theme-insCodeBg)/ .25)",
           insBorderColor: "rgb(var(--theme-insCodeBorder)/ .7)",
           delBackground: "rgb(var(--theme-delCodeBg)/ .25)",
