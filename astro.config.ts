@@ -15,6 +15,9 @@ import nightowl from "./night-owl-color-theme.json";
 export default defineConfig({
   site: "https://thwd.dev",
   prefetch: true,
+  experimental: {
+    contentCollectionCache: true,
+  },
   integrations: [
     tailwind(),
     sitemap(),
