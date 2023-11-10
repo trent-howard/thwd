@@ -1,5 +1,4 @@
 import { defineConfig } from "astro/config";
-import prefetch from "@astrojs/prefetch";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import {
@@ -15,10 +14,10 @@ import nightowl from "./night-owl-color-theme.json";
 // https://astro.build/config
 export default defineConfig({
   site: "https://thwd.dev",
+  prefetch: true,
   integrations: [
     tailwind(),
     sitemap(),
-    prefetch(),
     astroExpressiveCode({
       themes: [new ExpressiveCodeTheme(nightowl)],
       useThemedScrollbars: false,
