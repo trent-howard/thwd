@@ -16,7 +16,7 @@ export default defineConfig({
   site: "https://thwd.dev",
   prefetch: true,
   experimental: {
-    contentCollectionCache: true,
+    contentCollectionCache: false,
   },
   integrations: [
     tailwind(),
