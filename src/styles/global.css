@@ -33,7 +33,7 @@
   }
 
   html {
-    @apply h-full scroll-smooth;
+    @apply h-full scroll-p-12 scroll-smooth;
   }
 
   html body {
