@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 ---
 
 <script>
@@ -60,7 +60,7 @@ import { Icon } from "astro-icon";
 
 {/* Inlined to avoid FOUC. */}
 <script is:inline>
-const bodyThemeIsDark = document.documentElement.classList.contains("dark");
-const button = document.getElementById("toggle-theme");
-button.setAttribute("aria-pressed", String(bodyThemeIsDark));
+  const bodyThemeIsDark = document.documentElement.classList.contains("dark");
+  const button = document.getElementById("toggle-theme");
+  button.setAttribute("aria-pressed", String(bodyThemeIsDark));
 </script>
