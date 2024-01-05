@@ -5,6 +5,7 @@ import {
   astroExpressiveCode,
   ExpressiveCodeTheme,
 } from "astro-expressive-code";
+import icon from "astro-icon";
 
 import addClasses from "./rehype-add-classes.mjs";
 // import fails on build if we use the @ path shortcut
@@ -19,8 +20,9 @@ export default defineConfig({
     contentCollectionCache: false,
   },
   integrations: [
-    tailwind(),
+    icon(),
     sitemap(),
+    tailwind(),
     astroExpressiveCode({
       themes: [new ExpressiveCodeTheme(nightowl)],
       useThemedScrollbars: false,
