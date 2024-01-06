@@ -40,7 +40,7 @@ import { Icon } from "astro-icon/components";
     type="button"
     title="Toggle theme"
     id="toggle-theme"
-    class="group relative h-9 w-9 rounded-md bg-secondary/[.5] p-2 ring-primary/[.75] ring-offset-2 ring-offset-bgColor transition-all hover:ring-4"
+    class="group relative flex h-9 w-9 items-center rounded-md bg-secondary/[.5] p-2 ring-primary/[.75] ring-offset-2 ring-offset-bgColor transition-all hover:ring-4"
     aria-label="Toggle Dark Mode"
   >
     <Icon
@@ -53,7 +53,7 @@ import { Icon } from "astro-icon/components";
       name="ph:moon-stars"
       aria-hidden="true"
       focusable="false"
-      class="opacity-0 transition-all group-aria-[pressed=false]:scale-100 group-aria-[pressed=false]:opacity-100"
+      class="h-full w-full opacity-0 transition-all group-aria-[pressed=false]:scale-100 group-aria-[pressed=false]:opacity-100"
     />
   </button>
 </theme-toggle>
