@@ -87,6 +87,9 @@
   .prose .expressive-code .frame .title {
     @apply w-full border-none font-mono text-xs !important;
   }
+  .prose .expressive-code .frame.has-title .title::after {
+    @apply border-none !important;
+  }
   .prose .expressive-code .frame.is-terminal {
     --button-spacing: 0.4rem !important;
   }
