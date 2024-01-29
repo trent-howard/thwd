@@ -90,6 +90,10 @@
   .prose .expressive-code .frame.is-terminal {
     --button-spacing: 0.4rem !important;
   }
+  .prose .expressive-code .frame.has-title:not(.is-terminal) {
+    --button-spacing: 2rem !important;
+  }
+
   .prose .expressive-code .copy button {
     @apply h-8 w-8 ring-offset-2 ring-offset-[#0b253a] focus-visible:border-none focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 !important;
   }
