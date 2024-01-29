@@ -8,7 +8,7 @@ interface Props {
 const { headings } = Astro.props;
 ---
 
-<ol class="[&:not(#post-outline>ul)]:ml-2">
+<ol class="[&:not(#post-outline>ol)]:ml-2">
   {
     headings.map((h) => (
       <li>
