@@ -1,16 +1,12 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
-import {
-  astroExpressiveCode,
-  ExpressiveCodeTheme,
-} from "astro-expressive-code";
+import { astroExpressiveCode } from "astro-expressive-code";
 import icon from "astro-icon";
 
 import addClasses from "./rehype-add-classes.mjs";
 // import fails on build if we use the @ path shortcut
 import { linkableMdHeadings } from "./src/constants";
-import nightowl from "./night-owl-color-theme.json";
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,15 +20,31 @@ export default defineConfig({
     sitemap(),
     tailwind(),
     astroExpressiveCode({
-      themes: [new ExpressiveCodeTheme(nightowl)],
+      themes: ["rose-pine", "rose-pine-dawn"],
+      themeCssSelector(theme, { styleVariants }) {
+        // If one dark and one light theme are available
+        if (styleVariants.length >= 2) {
+          const baseTheme = styleVariants[0]?.theme;
+          const altTheme = styleVariants.find(
+            (v) => v.theme.type !== baseTheme?.type
+          )?.theme;
+          if (theme === baseTheme || theme === altTheme)
+            return `[data-theme='${theme.type}']`;
+        }
+        // return default selector
+        return `[data-theme="${theme.name}"]`;
+      },
       useThemedScrollbars: false,
+      useThemedSelectionColors: false,
+      customizeTheme(theme) {
+        theme.colors["editor.background"] = "rgb(var(--theme-code-bg))";
+        theme.colors["terminal.background"] = "rgb(var(--theme-code-bg))";
+      },
       styleOverrides: {
-        frames: { tooltipSuccessBackground: "rgb(var(--theme-primary) / 1)" },
-        textMarkers: {
-          insBackground: "rgb(var(--theme-insCodeBg)/ .25)",
-          insBorderColor: "rgb(var(--theme-insCodeBorder)/ .7)",
-          delBackground: "rgb(var(--theme-delCodeBg)/ .25)",
-          delBorderColor: "rgb(var(--theme-delCodeBorder)/ .7)",
+        frames: {
+          tooltipSuccessBackground: "rgb(var(--theme-primary) / 1)",
+          editorTabBarBorderColor: "rgb(var(--theme-code-header))",
+          editorActiveTabBackground: "rgb(var(--theme-code-header))",
         },
       },
     }),
