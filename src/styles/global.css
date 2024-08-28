@@ -4,32 +4,29 @@
 @tailwind utilities;
 
 @layer base {
+  
   :root {
     color-scheme: light;
     --theme-text: 6 24 34;
-    --theme-background: 242 249 253;
-    --theme-primary: 91 107 225;
+    --theme-background: 255 255 255;
+    --theme-primary: 83 142 173;
     --theme-secondary: 236 197 177;
     --theme-accent: 172 156 32;
     --theme-accent-2: 4 2 1;
-    --theme-insCodeBg: 52 211 153; /* emerald-400 */
-    --theme-insCodeBorder: 110 231 183; /* emerald-300 */
-    --theme-delCodeBg: 239 68 68; /* red-500 */
-    --theme-delCodeBorder: 248 113 113; /* red-400 */
+    --theme-code-bg: 249 244 238;
+    --theme-code-header: 242 237 232;
   }
 
   :root.dark {
     color-scheme: dark;
     --theme-text: 242 249 253;
-    --theme-background: 6 24 34;
-    --theme-primary: 91 107 225;
+    --theme-background: 31 32 39;
+    --theme-primary: 166 206 215;
     --theme-secondary: 4 2 1;
     --theme-accent: 231 219 126;
     --theme-accent-2: 236 197 177;
-    --theme-insCodeBg: 52 211 153; /* emerald-400 */
-    --theme-insCodeBorder: 110 231 183; /* emerald-300 */
-    --theme-delCodeBg: 239 68 68; /* red-500 */
-    --theme-delCodeBorder: 248 113 113; /* red-400 */
+    --theme-code-bg: 12 10 2;
+    --theme-code-header: 23 21 21;
   }
 
   html {
@@ -68,6 +65,9 @@
   /* expressive-code style overrides */
   .prose .expressive-code pre > code {
     @apply font-mono !important;
+  }
+  .prose .expressive-code .ec-line .code {
+    @apply box-border !important;
   }
   .prose .expressive-code .frame {
     @apply shadow-none !important;
