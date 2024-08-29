@@ -11,11 +11,7 @@ interface Props {
 }
 
 export function sortPostsByDate(posts: CollectionEntry<"posts">[] = []) {
-  return posts.sort(
-    (a, b) =>
-      new Date(b.data.publishedAt).valueOf() -
-      new Date(a.data.publishedAt).valueOf()
-  );
+  return posts.sort((a, b) => new Date(b.data.publishedAt).valueOf() - new Date(a.data.publishedAt).valueOf());
 }
 
 const allPosts = await getPosts();
@@ -32,16 +28,11 @@ const meta = { title: "Posts" };
         {
           posts.map((post) => (
             <li class="flex flex-col flex-wrap gap-2 sm:flex-row [&_q]:basis-full">
-              <FormattedDate
-                date={post.data.publishedAt}
-                class="min-w-[120px] text-textColor/[.8]"
-              />
+              <FormattedDate date={post.data.publishedAt} class="min-w-[120px] text-textColor/[.8]" />
               <a class="underline" href={`/posts/${post.slug}/`} rel="prefetch">
                 {post.data.title}
               </a>
-              <q class="line-clamp-3 block text-sm text-accent2">
-                {post.data.description}
-              </q>
+              <q class="line-clamp-3 block text-sm text-accent2">{post.data.description}</q>
             </li>
           ))
         }

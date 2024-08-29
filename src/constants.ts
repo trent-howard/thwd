@@ -23,8 +23,7 @@ export type Config = {
 export const config: Config = {
   author: "Trent",
   title: "thwd.dev",
-  description:
-    "A Melbourne dev's thoughts on programming, music, food, and more.",
+  description: "A Melbourne dev's thoughts on programming, music, food, and more.",
   ogLocale: "en_AU",
   date: {
     locale: "en-AU",

@@ -13,8 +13,7 @@ import { Icon } from "astro-icon/components";
         button.addEventListener("click", (e) => {
           if (e.currentTarget instanceof HTMLButtonElement) {
             // isPressed === dark mode current on
-            const isPressed =
-              e.currentTarget.getAttribute("aria-pressed") === "true";
+            const isPressed = e.currentTarget.getAttribute("aria-pressed") === "true";
 
             // invert isPressed
             const themeChangeEvent = new CustomEvent("theme-change", {

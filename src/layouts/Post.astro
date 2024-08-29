@@ -55,13 +55,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
       {
         !!ogImage && (
           <div class="hero-container aspect-h-9 aspect-w-16 mb-6">
-            <Image
-              src={ogImage.src}
-              alt={ogImage.alt}
-              class="object-cover"
-              loading="eager"
-              fetchpriority="high"
-            />
+            <Image src={ogImage.src} alt={ogImage.alt} class="object-cover" loading="eager" fetchpriority="high" />
           </div>
         )
       }
@@ -75,11 +69,7 @@ const dateFormat: Intl.DateTimeFormatOptions = {
           !!updatedAt && (
             <span class="p-1">
               Last updated:
-              <FormattedDate
-                class="ms-1"
-                date={updatedAt}
-                options={dateFormat}
-              />
+              <FormattedDate class="ms-1" date={updatedAt} options={dateFormat} />
             </span>
           )
         }

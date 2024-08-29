@@ -44,10 +44,7 @@ const headingTree = buildHeadingTree(headings);
 
 {
   !!headings.length && (
-    <aside
-      id="post-outline"
-      class="sticky top-20 order-2 -me-32 hidden basis-64 lg:block"
-    >
+    <aside id="post-outline" class="sticky top-20 order-2 -me-32 hidden basis-64 lg:block">
       <h2 class="font-semibold">Contents</h2>
       <RecursiveList headings={headingTree} />
     </aside>
@@ -57,10 +54,7 @@ const headingTree = buildHeadingTree(headings);
   document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("article .md-title");
     const tocItems = document.querySelectorAll("a.toc");
-    const tocMap = Array.from(sections).reduce(
-      (acc, el, i) => ({ ...acc, [el.id]: tocItems[i] }),
-      {}
-    );
+    const tocMap = Array.from(sections).reduce((acc, el, i) => ({ ...acc, [el.id]: tocItems[i] }), {});
     let current = sections[0]?.id;
     // Toggle classes when items are in view
     sections.forEach((s) => {
@@ -70,24 +64,16 @@ const headingTree = buildHeadingTree(headings);
             const id = entry.target.id;
             if (entry.isIntersecting) {
               // remove active classes and attributes
-              tocMap[current].removeAttribute(
-                "data-current-active-tab-content-item"
-              );
-              tocMap[current].parentElement.classList.remove("border-primary");
-              tocMap[current].parentElement.removeAttribute(
-                "data-current-active-parent-tab-content-item"
-              );
+              tocMap[current].removeAttribute("data-current-active-tab-content-item");
+              tocMap[current].parentElement.classList.remove("border-primary", "dark:border-primary");
+              tocMap[current].parentElement.classList.add("border-zinc-200", "dark:border-zinc-700");
+              tocMap[current].parentElement.removeAttribute("data-current-active-parent-tab-content-item");
 
               // set classses and attributes on the new active toc item
-              tocMap[id].parentElement.classList.add("border-primary");
-              tocMap[id].setAttribute(
-                "data-current-active-tab-content-item",
-                true
-              );
-              tocMap[id].parentElement.setAttribute(
-                "data-current-active-parent-tab-content-item",
-                true
-              );
+              tocMap[id].parentElement.classList.add("border-primary", "dark:border-primary");
+              tocMap[id].parentElement.classList.remove("border-zinc-200", "dark:border-zinc-700");
+              tocMap[id].setAttribute("data-current-active-tab-content-item", true);
+              tocMap[id].parentElement.setAttribute("data-current-active-parent-tab-content-item", true);
               // update current toc item
               current = id;
             }

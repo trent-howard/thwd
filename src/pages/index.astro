@@ -9,14 +9,10 @@ import { tehSocials } from "@/constants";
   <section class="mb-16">
     <h1 class="title mb-6">👋 Heyo, welcome!</h1>
     <p class="mb-4">
-      I'm Trent, a full-stack developer and musician from Melbourne. I'm
-      fascinated by the fast moving world of web development and love playing
-      around with new frameworks, languages, tools, and cloud infra.
+      I'm Trent, a full-stack developer and musician from Melbourne. I'm fascinated by the fast moving world of web
+      development and love playing around with new frameworks, languages, tools, and cloud infra.
     </p>
-    <p>
-      This is a place for me to share thoughts about programming, music, and
-      anything cool I learn!
-    </p>
+    <p>This is a place for me to share thoughts about programming, music, and anything cool I learn!</p>
   </section>
   <section>
     <div class="flex flex-wrap items-center gap-x-4">
@@ -25,19 +21,8 @@ import { tehSocials } from "@/constants";
         {
           tehSocials.map(({ url, iconName, name }) => (
             <li class="flex">
-              <a
-                class="inline-block p-1"
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={name}
-              >
-                <Icon
-                  class="h-8 w-8"
-                  name={iconName}
-                  aria-hidden="true"
-                  focusable="false"
-                />
+              <a class="inline-block p-1" href={url} target="_blank" rel="noopener noreferrer" title={name}>
+                <Icon class="h-8 w-8" name={iconName} aria-hidden="true" focusable="false" />
                 <span class="sr-only">{name}</span>
               </a>
             </li>
