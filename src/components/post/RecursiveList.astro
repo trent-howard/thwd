@@ -12,12 +12,8 @@ const { headings } = Astro.props;
   {
     headings.map((h) => (
       <li>
-        <div class="mt-2 flex flex-row items-center border-l-[3px] border-gray-200 pl-2 hover:border-primary">
-          <a
-            class="toc"
-            href={`#${h.slug}`}
-            aria-label={`Scroll to section: ${h.text}`}
-          >
+        <div class="mt-2 flex flex-row items-center border-l-[3px] border-zinc-200 pl-2 hover:border-primary dark:border-zinc-700 dark:hover:border-primary">
+          <a class="toc" href={`#${h.slug}`} aria-label={`Scroll to section: ${h.text}`}>
             {h.text}
           </a>
         </div>
