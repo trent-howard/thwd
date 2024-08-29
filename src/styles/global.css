@@ -4,7 +4,6 @@
 @tailwind utilities;
 
 @layer base {
-  
   :root {
     color-scheme: light;
     --theme-text: 6 24 34;
