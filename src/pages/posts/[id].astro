@@ -3,10 +3,12 @@ import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 import { getPosts } from "@/utils";
 
 import PostLayout from "@/layouts/Post.astro";
+import { render } from "astro:content";
+
 export const getStaticPaths = (async () => {
   const posts = await getPosts();
   return posts.map((entry) => ({
-    params: { slug: entry.slug },
+    params: { id: entry.id },
     props: { entry },
   }));
 }) satisfies GetStaticPaths;
@@ -14,7 +16,7 @@ export const getStaticPaths = (async () => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+const { Content } = await render(entry);
 ---
 
 <PostLayout post={entry}>

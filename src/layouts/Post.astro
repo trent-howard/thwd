@@ -6,6 +6,7 @@ import { Icon } from "astro-icon/components";
 import BaseLayout from "@/layouts/Base.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import PostOutline from "@/components/post/PostOutline.astro";
+import { render } from "astro:content";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -15,7 +16,7 @@ const { post } = Astro.props;
 const {
   data: { title, description, ogImage, publishedAt, updatedAt },
 } = post;
-const { headings } = await post.render();
+const { headings } = await render(post);
 
 const dateFormat: Intl.DateTimeFormatOptions = {
   month: "long",

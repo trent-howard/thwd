@@ -1,9 +1,10 @@
+import { glob } from "astro/loaders";
 import { z, defineCollection } from "astro:content";
 
 const Tags = z.enum(["react", "webdev", "frontend"]);
 
 const posts = defineCollection({
-  type: "content",
+  loader: glob({ pattern: "**/[^_]*.{md,mdx}", base: "src/content/posts" }),
   schema: ({ image }) =>
     z.object({
       // ugh, max lengths for title and description are so inconsistent
