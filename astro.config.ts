@@ -12,9 +12,6 @@ import { linkableMdHeadings } from "./src/constants";
 export default defineConfig({
   site: "https://thwd.dev",
   prefetch: true,
-  experimental: {
-    contentCollectionCache: false,
-  },
   integrations: [
     icon(),
     sitemap(),
