@@ -1,8 +1,8 @@
-/** @type {import('tailwindcss').Config} */
 import plugin from "tailwindcss/plugin";
 import { fontFamily } from "tailwindcss/defaultTheme";
+import type { Config } from "tailwindcss";
 
-module.exports = {
+export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   darkMode: "class",
   theme: {
@@ -50,4 +50,4 @@ module.exports = {
       });
     }),
   ],
-};
+} satisfies Config;

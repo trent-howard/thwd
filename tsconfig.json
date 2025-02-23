@@ -4,6 +4,7 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "baseUrl": "./src",
+    "lib": ["es2022", "dom", "dom.iterable"],
     "paths": {
       "@/*": ["./*"],
       "@/constants": ["./constants.ts"],
